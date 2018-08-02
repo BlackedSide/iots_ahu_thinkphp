@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>安徽省物联网安全技术工程实验室</title>
+
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/base.css">
+    <link rel="stylesheet" href="__STATIC__/css/index.css">
+</head>
+<body>
+    <div class="nav-head">
+        <img src="__STATIC__/img/logo.png" alt="">
+        <h1>安徽省物联网安全技术工程实验室</h1>
+        <h2>Anhui Engineering Laboratory of IoT Security Technologies</h2>
+    </div>
+    <ul class="nav-main clearfix">
+        <li><a href="">首页</a></li>
+        <div class="dropdown dropdown1">
+            <a class="dropbtn dropbtn1" href="">机构简介</a>
+            <div class="drop-content drop-content1">
+                <a href="">实验室简介</a>
+                <a href="">现任领导</a>
+                <a href="">机构设置</a>
+            </div>
+        </div>
+        <div class="dropdown dropdown2">
+            <a class="dropbtn dropbtn2" href="">研究方向</a>
+            <div class="drop-content drop-content2">
+                <a href="">应用密码学理论与技术</a>
+                <a href="">云计算与大数据安全</a>
+                <a href="">物联网通信安全</a>
+                <a href="">可信嵌入式系统</a>
+            </div>
+        </div>
+        <li><a href="">研究成果</a></li>
+        <li><a href="">合作交流</a></li>
+        <div class="dropdown dropdown3">
+            <a class="dropbtn dropbtn3" href="">新闻资讯</a>
+            <div class="drop-content drop-content3">
+                <a href="">新闻动态</a>
+                <a href="">通知公告</a>
+            </div>
+        </div>
+        <li><a href="">联系我们</a></li>
+        <li><a href="">友情链接</a></li>
+    </ul>
+
+    <div class="main clearfix">
+        <div class="banner">
+            <ul>
+                <li class="li_img fade">
+                    <img src="__STATIC__/img/example1.jpg" alt="">
+                    <span>IoT是Internet Of Things的缩写，翻译为物联网</span>
+                </li>
+                <li class="li_img fade">
+                    <img src="__STATIC__/img/example2.jpg" alt="">
+                    <span>WISE-PaaS物联网软件平台服务架构</span>
+                </li>
+                <li class="li_img fade">
+                    <img src="__STATIC__/img/example3.png" alt="">
+                    <span>物联网信息技术壁纸展示</span>
+                </li>
+            </ul>
+            <a class="prev">❮</a>
+            <a class="next">❯</a>
+        </div>
+        <div class="news news-lab">
+            <div class="news-head"><span>实验室资讯</span><a href="">More</a></div>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+        </div>
+        <div class="news news-achive">
+            <div class="news-head"><span>新闻快递</span><a href="">More</a></div>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        安徽省物联网安全技术工程实验室 2017 ©️ <a href="http://www.ahu.edu.cn">ahu.edu.cn</a>
+        <br>
+        <a href="">关于我们</a> <a href="">联系我们</a>
+    </div>
+</body>
+<script>
+    var i;
+    var count = 0;
+    var timer;
+    var prev = document.getElementsByClassName("prev")[0];
+    var next = document.getElementsByClassName("next")[0];
+    var li_img = document.getElementsByClassName("li_img");
+
+    window.onload = function(){
+        initShow(0);
+        showSlides();
+
+        prev.onmouseover = function(){clearInterval(timer);}
+        next.onmouseover = function(){clearInterval(timer);}
+        prev.onmouseout = function(){showSlides();}
+        next.onmouseout = function(){showSlides();}
+        prev.onclick = function(){
+            count--;
+            if(count < 0){
+                count = li_img.length-1;
+            }
+            initShow(count);
+        }
+        next.onclick = function(){
+            count++;
+            if(count == li_img.length){
+                count = 0;
+            }
+            initShow(count);
+        }
+    }
+    function showSlides(){
+        timer = setInterval(function(){
+            initShow(count);
+            count++;
+            if(count == li_img.length){
+                count = 0;
+            }
+        },3000);
+    }
+    function initShow(counti){
+        for(i=0;i<li_img.length;i++){
+            li_img[i].style.display = "none";
+        }
+        li_img[counti].style.display = "block";
+    }
+</script>
+</html>
