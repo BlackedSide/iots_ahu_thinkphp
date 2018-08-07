@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/new.css">
+    <script src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/js/wangEditor.min.js"></script>
+</head>
+<body>
+    <div class="new_title">新闻插入页</div>
+
+    <form action="{:url('newsmanager/submit')}" method="get" onsubmit="return check(this)">
+        <label for="newin_title">标题</label><br>
+        <input type="text" id="newin_title" name="newin_title">
+        <br><br>
+        <label for="newin_content">内容</label><br>
+        <div id="editor"></div>
+        <br>
+        <textarea name="newin_content" id="newin_content"></textarea>
+        <label for="newin_remark">备注</label><br>
+        <input type="text" name="newin_remark" id="newin_remark">
+        <br><br>
+        <button id="newin_submit" type="submit">保存</button>
+    </form>
+
+    <script>
+        var E = window.wangEditor;
+        var editor = new E("#editor");
+        var $text = $('#newin_content');
+
+        editor.customConfig.onchange = function(html){
+            $text.val(html);
+        }
+        editor.create();
+    </script>
+    <script>
+        function check(form){
+            if(form.newin_title.value == ""){
+                alert("请输入新闻标题！");
+                form.newin_title.focus();
+                return false;
+            }
+            if(form.newin_content.value == ""){
+                alert("请输入文章内容！");
+                form.newin_content.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

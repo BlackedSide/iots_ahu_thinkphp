@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>后台管理页</title>
+	<link rel="stylesheet" href="__STATIC__/css/default.css">
 	<link rel="stylesheet" type="text/css" href="__STATIC__/css/admin.css">
 	<script type="text/javascript" src="__STATIC__/js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="__STATIC__/js/admin.js"></script>
@@ -21,12 +22,18 @@
 <div id="left">
 	<dl>
 		<dt>栏目管理</dt>
-		<dd><a href="" target="iframe">查看栏目</a></dd>
+		<dd><a href="{:url('modulemanager/index')}" target="iframe">查看栏目</a></dd>
 	</dl>
 
 	<dl>
 		<dt>新闻管理</dt>
-		<dd><a href="" target="iframe">查看内容</a></dd>
+		<dd><a href="{:url('newsmanager/index')}" target="iframe">查看内容</a></dd>
+		<dd><a href="{:url('newsmanager/insert')}" target="iframe">插入新闻</a></dd>
+	</dl>
+
+	<dl>
+		<dt>图片管理</dt>
+		<dd><a href="" target="view_window">查看图片</a></dd>
 	</dl>
 </div>
 
