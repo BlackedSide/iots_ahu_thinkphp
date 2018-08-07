@@ -32,9 +32,9 @@
 					{/if}
 				</td>
 				<td>
-					<a href="">编辑</a>&nbsp;
-					{if condition="$vo.locked == 1"}<a href="">恢复</a>
-						{else /}<a href="">删除</a>
+					<a href="{:url('update',['id'=>$vo['id']])}">编辑</a>&nbsp;
+					{if condition="$vo.locked == 1"}<a href="{:url('delete',['id'=>$vo['id']])}">恢复</a>
+						{else /}<a href="{:url('reuse',['id'=>$vo['id']])}">删除</a>
 					{/if}
 				</td>
 			</tr>

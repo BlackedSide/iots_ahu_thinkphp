@@ -80,14 +80,9 @@
         </div>
         <div class="news news-achive">
             <div class="news-head"><span>新闻快递</span><a href="">More</a></div>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
-            <p><em></em><a href="">这是一条示例行文字，这是一条文字。</a><span>2018-01-01</span></p>
+            {volist name="latest_news" id="vo2"}
+                <p><em></em><a href="{:url('shownews',['id'=>$vo2['id']])}">{$vo2.title}</a><span>{$vo2.createtime|date='Y-m-d',###}</span></p>
+            {/volist}
         </div>
     </div>
 

@@ -30,4 +30,28 @@ class Newsmanager extends Controller
             $this -> error("添加失败……", url('index'));
         }
     }
+
+    public function update($id){
+        $result = db('iot_content') -> where('id',$id) -> select();
+        $this -> assign('newin_id',$result[0]['id']);
+        $this -> assign('newin_title',$result[0]['title']);
+        $this -> assign('newin_content',$result[0]['content']);
+        $this -> assign('newin_remark',$result[0]['remark']);
+        return $this -> fetch();
+    }
+
+    public function update_sub(){
+        $id = request() -> get('newin_id');
+        $data['title'] = request() -> get('newin_title');
+        $data['content'] = request() -> get('newin_content');
+        $data['remark'] = request() -> get('newin_remark');
+        $data['createtime'] = time();
+
+        $result = db('iot_content') -> where('id',$id) -> update($data);
+        if($result){
+            $this -> success("更新成功！", url('index'));
+        }else{
+            $this -> error("更新失败……", url('index'));
+        }
+    }
 }
