@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/new.css">
+    <script src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/js/wangEditor.min.js"></script>
+</head>
+<body>
+    <div class="new_title">新闻编辑页</div>
+
+    <form action="{:url('modulemanager/update_sub')}" method="get" onsubmit="return check(this)">
+        <span>这个栏目的id为 <span id="newin_id">{$modin_id}</span> 。</span><br><br>
+        <input type="text" name="modin_id" id="the_id" style="display:none;">
+        <label for="modin_name">栏目名称</label><br>
+        <input type="text" id="modin_name" name="modin_name" value="{$modin_name}">
+        <br><br>
+        <label for="newin_content">内容</label><br>
+        <div id="editor">{$modin_content}</div>
+        <br>
+        <textarea name="modin_content" id="newin_content"></textarea>
+        <label for="newin_remark">备注</label><br>
+        <input type="text" name="modin_remark" id="newin_remark" value="{$modin_remark}">
+        <br><br>
+        <button id="newin_submit" type="submit">保存</button>
+    </form>
+
+    <script>
+        var E = window.wangEditor;
+        var editor = new E("#editor");
+        var $text = $('#newin_content');
+
+        editor.customConfig.onchange = function(html){
+            $text.val(html);
+        }
+        editor.create();
+    </script>
+    <script>
+        function check(form){
+            if(form.modin_name.value == ""){
+                alert("请输入栏目名称！");
+                form.modin_name.focus();
+                return false;
+            }
+            if(form.newin_content.value == ""){
+                alert("请输入文章内容！");
+                form.newin_content.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script>
+        $('#the_id').val($('#newin_id').text());
+    </script>
+</body>
+</html>

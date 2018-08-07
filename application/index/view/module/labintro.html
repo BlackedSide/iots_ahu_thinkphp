@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$html_title}</title>
+
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/base.css">
+    <link rel="stylesheet" href="__STATIC__/css/index.css">
+    <link rel="stylesheet" href="__STATIC__/css/module.css">
+</head>
+<body>
+    <div class="nav-head">
+        <img src="__STATIC__/img/logo.png" alt="">
+        <h1>安徽省物联网安全技术工程实验室</h1>
+        <h2>Anhui Engineering Laboratory of IoT Security Technologies</h2>
+    </div>
+    <ul class="nav-main clearfix">
+        <li><a href="{:url('index/index')}">首页</a></li>
+        <div class="dropdown dropdown1">
+            <a class="dropbtn dropbtn1" href="">机构简介</a>
+            <div class="drop-content drop-content1">
+                <a href="">实验室简介</a>
+                <a href="">现任领导</a>
+                <a href="">机构设置</a>
+            </div>
+        </div>
+        <div class="dropdown dropdown2">
+            <a class="dropbtn dropbtn2" href="">研究方向</a>
+            <div class="drop-content drop-content2">
+                <a href="">应用密码学理论与技术</a>
+                <a href="">云计算与大数据安全</a>
+                <a href="">物联网通信安全</a>
+                <a href="">可信嵌入式系统</a>
+            </div>
+        </div>
+        <li><a href="">研究成果</a></li>
+        <li><a href="">合作交流</a></li>
+        <div class="dropdown dropdown3">
+            <a class="dropbtn dropbtn3" href="">新闻资讯</a>
+            <div class="drop-content drop-content3">
+                <a href="">新闻动态</a>
+                <a href="">通知公告</a>
+            </div>
+        </div>
+        <li><a href="">联系我们</a></li>
+        <li><a href="">友情链接</a></li>
+    </ul>
+
+    <div class="container clearfix">
+        <div class="module-main module-left">
+            <h1>{$mod_name}</h1>
+            {$mod_content}
+        </div>
+        <div class="module-main module-right">
+            <h1>近期热点</h1>
+            <p><a href="">这是一条示例行文字。</a></p>
+            <p><a href="">这是一条示例行文字。</a></p>
+            <p><a href="">这是一条示例行文字。</a></p>
+            <p><a href="">这是一条示例行文字。</a></p>
+            <p><a href="">这是一条示例行文字。</a></p>
+        </div>
+    </div>
+
+    <div class="footer">
+        安徽省物联网安全技术工程实验室 2017 ©️ <a href="http://www.ahu.edu.cn">ahu.edu.cn</a>
+        <br>
+        <a href="">关于我们</a> <a href="">联系我们</a>
+    </div>
+</body>
+</html>
