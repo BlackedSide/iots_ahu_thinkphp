@@ -8,7 +8,7 @@ class Index extends Controller
 {
     public function index()
     {
-        $list = db('iot_content') -> where('category',"新闻") -> select();
+        $list = db('iot_content') -> where('category',"新闻") -> order('createtime DESC') -> limit(8) -> select();
         $this -> assign('latest_news',$list);
         return $this->fetch();
     }

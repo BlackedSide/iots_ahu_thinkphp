@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片上传页</title>
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/upload.css">
+</head>
+<body>
+    <div id="upload_title">图片上传页</div>
+
+    <form action="{:url('upload/submit')}" method="post" enctype="multipart/form-data" onsubmit="return validate_upload(this)">
+        <label for="upload_image">图片选择</label><br>
+        <input type="file" name="upload_image" id="upload_image"><br><br>
+        <label for="upload_label">标签&nbsp;<span style="font-size: 16px;">(请务必输入关键词以便后期搜索使用)</span><br><span style="font-size: 14px;color: #888888;">若关键词有多个，请用中文“，”分隔</span></label><br>
+        <input type="text" name="upload_label" id="upload_label" placeholder="请输入关键词，若输入多个，用中文输入法“，”分隔。"><br><br>
+        <button type="submit" id="upload_btn">上传</button>
+    </form>
+</body>
+<script>
+// 验证方法
+function validate_required(field,alerttxt){
+	with(field){
+		if (value==null||value=="") {
+			alert(alerttxt);
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+// 上传验证
+function validate_upload(thisform){
+	with(thisform){
+		if (validate_required(upload_image,"请选择上传文件！")==false) {
+			upload_image.focus();
+			return false;
+		}else if (validate_required(upload_label,"请输入关键字！")==false) {
+			upload_label.focus();
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+</script>
+</html>

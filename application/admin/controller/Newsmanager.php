@@ -7,7 +7,7 @@ url::root('/index.php');
 class Newsmanager extends Controller
 {
     public function index(){
-        $list = db('iot_content') -> where('category',"新闻") -> select();
+        $list = db('iot_content') -> where('category',"新闻") -> order("createtime DESC") -> select();
         $this -> assign('content_table', $list);
         return $this->fetch();
     }
