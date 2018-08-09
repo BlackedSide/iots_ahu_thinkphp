@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="__STATIC__/css/default.css">
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/admin.css">
+</head>
+<body>
+	<table class="table">
+        <div class="table_title">通知管理</div>
+		<tr>
+			<th>Id</th>
+			<th>标题</th>
+			<th>组别</th>
+			<th>创建时间</th>
+			<th>备注</th>
+			<th>Locked</th>
+			<th>操作</th>
+		</tr>
+
+		{volist name="content_table" id="vo"}
+			<tr>
+				<td>{$vo.id}</td>
+				<td>{$vo.title}</td>
+				<td>{$vo.category}</td>
+				<td>{$vo.createtime|date='Y-m-d H:i',###}</td>
+				<td>{$vo.remark}</td>
+				<td>
+					{if condition="$vo.locked == 1"}锁定
+						{else /}0
+					{/if}
+				</td>
+				<td>
+					<a href="{:url('update',['id'=>$vo['id']])}">编辑</a>&nbsp;
+					{if condition="$vo.locked == 1"}<a href="{:url('delete',['id'=>$vo['id']])}">恢复</a>
+						{else /}<a href="{:url('reuse',['id'=>$vo['id']])}">删除</a>
+					{/if}
+				</td>
+			</tr>
+		{/volist}
+	</table>
+</body>
+</html>

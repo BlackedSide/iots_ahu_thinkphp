@@ -11,16 +11,23 @@
     <script src="__STATIC__/js/wangEditor.min.js"></script>
 </head>
 <body>
-    <div class="new_title">新闻插入页</div>
+    <div class="new_title">文章插入页</div>
 
-    <form action="{:url('newsmanager/submit')}" method="get" onsubmit="return check(this)">
+    <form action="{:url('newsmanager/submit')}" method="post" onsubmit="return check(this)">
+        <label for="newin_category">组别</label><br>
+        <select name="newin_category" id="newin_category">
+            <option value="新闻">新闻</option>
+            <option value="通知">通知</option>
+            <option value="论文">论文</option>
+            <option value="合作">合作</option>
+        </select>&nbsp;&nbsp;<span style="color: #888888;font-size: 14px;">(请选择文章所属类别)</span><br><br>
         <label for="newin_title">标题</label><br>
         <input type="text" id="newin_title" name="newin_title">
         <br><br>
         <label for="newin_content">内容</label><br>
         <div id="editor"></div>
         <br>
-        <textarea name="newin_content" id="newin_content"></textarea>
+        <textarea name="newin_content" id="newin_content" maxlength="65536"></textarea>
         <label for="newin_remark">备注</label><br>
         <input type="text" name="newin_remark" id="newin_remark">
         <br><br>

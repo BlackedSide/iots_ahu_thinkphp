@@ -11,18 +11,20 @@
     <script src="__STATIC__/js/wangEditor.min.js"></script>
 </head>
 <body>
-    <div class="new_title">新闻编辑页</div>
+    <div class="new_title">文章编辑页</div>
 
-    <form action="{:url('newsmanager/update_sub')}" method="get" onsubmit="return check(this)">
-        <span>这条新闻的id为 <span id="newin_id">{$newin_id}</span> 。</span><br><br>
+    <form action="{:url('newsmanager/update_sub')}" method="post" onsubmit="return check(this)">
+        <span>这条文章的id为 <span id="newin_id">{$newin_id}</span> 。</span><br><br>
         <input type="text" name="newin_id" id="the_id" style="display:none;">
+        <label for="newin_category">组别</label><br>
+        <input type="text" id="newin_category" name="newin_category" value="{$newin_category}"><br><br>
         <label for="newin_title">标题</label><br>
         <input type="text" id="newin_title" name="newin_title" value="{$newin_title}">
         <br><br>
         <label for="newin_content">内容</label><br>
         <div id="editor">{$newin_content}</div>
         <br>
-        <textarea name="newin_content" id="newin_content"></textarea>
+        <textarea name="newin_content" id="newin_content" maxlength="65536"></textarea>
         <label for="newin_remark">备注</label><br>
         <input type="text" name="newin_remark" id="newin_remark" value="{$newin_remark}">
         <br><br>
