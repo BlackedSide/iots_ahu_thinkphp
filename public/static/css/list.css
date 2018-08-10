@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.listfor{
+    position: relative;
+    width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+.list_title{
+    background-color: #ebebeb;
+    color: #333333;
+    padding: 10px 0 10px 20px;
+    font-size: 24px;
+}
+.listfor li{
+    padding: 10px 40px 10px 80px;
+    border-bottom: 1px solid #ebebeb;
+}
+.listfor li p{
+    width: 800px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.listfor li p a{
+    font-size: 20px;
+    color: #333333;
+}
+.listfor li span{
+    color: #999999;
+    font-size: 14px;
+}

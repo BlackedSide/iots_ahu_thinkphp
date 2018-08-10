@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>安徽省物联网安全技术工程实验室</title>
+    <title>{$html_title}</title>
 
     <link rel="stylesheet" href="__STATIC__/css/default.css">
     <link rel="stylesheet" href="__STATIC__/css/base.css">
-    <link rel="stylesheet" href="__STATIC__/css/index.css">
+    <link rel="stylesheet" href="__STATIC__/css/list.css">
 </head>
 <body>
     <div class="nav-head">
@@ -48,35 +48,11 @@
         <li><a href="{:url('module/index',['modname'=>'友情链接'])}">友情链接</a></li>
     </ul>
 
-    <div class="main clearfix">
-        <div class="banner">
-            <ul>
-                <li class="li_img fade">
-                    <img src="__STATIC__/img/example1.jpg" alt="">
-                    <span>IoT是Internet Of Things的缩写，翻译为物联网</span>
-                </li>
-                <li class="li_img fade">
-                    <img src="__STATIC__/img/example2.jpg" alt="">
-                    <span>WISE-PaaS物联网软件平台服务架构</span>
-                </li>
-                <li class="li_img fade">
-                    <img src="__STATIC__/img/example3.png" alt="">
-                    <span>物联网信息技术壁纸展示</span>
-                </li>
-            </ul>
-            <a class="prev">❮</a>
-            <a class="next">❯</a>
-        </div>
-        <div class="news news-lab">
-            <div class="news-head"><span>最新论文</span><a href="">More</a></div>
-            {volist name="latest_thesis" id="vo1"}
-                <li><em></em><p><a href="{:url('shownews',['id'=>$vo1['id']])}">{$vo1.title}</a></p><span>{$vo1.createtime|date='Y-m-d',###}</span></li>
-            {/volist}
-        </div>
-        <div class="news news-achive">
-            <div class="news-head"><span>新闻快递</span><a href="">More</a></div>
-            {volist name="latest_news" id="vo2"}
-                <li><em></em><p><a href="{:url('shownews',['id'=>$vo2['id']])}">{$vo2.title}</a></p><span>{$vo2.createtime|date='Y-m-d',###}</span></li>
+    <div class="container">
+        <div class="listfor">
+            <div class="list_title">{$list_title}</div>
+            {volist name="list" id="vo"}
+                <li><p><a href="{:url('index/shownews',['id'=>$vo['id']])}">{$vo.title}</a></p><span>{$vo.createtime|date="Y-m-d H:m",###}</span></li>
             {/volist}
         </div>
     </div>
@@ -87,51 +63,4 @@
         <a href="">关于我们</a> <a href="">联系我们</a>
     </div>
 </body>
-<script>
-    var i;
-    var count = 0;
-    var timer;
-    var prev = document.getElementsByClassName("prev")[0];
-    var next = document.getElementsByClassName("next")[0];
-    var li_img = document.getElementsByClassName("li_img");
-
-    window.onload = function(){
-        initShow(0);
-        showSlides();
-
-        prev.onmouseover = function(){clearInterval(timer);}
-        next.onmouseover = function(){clearInterval(timer);}
-        prev.onmouseout = function(){showSlides();}
-        next.onmouseout = function(){showSlides();}
-        prev.onclick = function(){
-            count--;
-            if(count < 0){
-                count = li_img.length-1;
-            }
-            initShow(count);
-        }
-        next.onclick = function(){
-            count++;
-            if(count == li_img.length){
-                count = 0;
-            }
-            initShow(count);
-        }
-    }
-    function showSlides(){
-        timer = setInterval(function(){
-            initShow(count);
-            count++;
-            if(count == li_img.length){
-                count = 0;
-            }
-        },3000);
-    }
-    function initShow(counti){
-        for(i=0;i<li_img.length;i++){
-            li_img[i].style.display = "none";
-        }
-        li_img[counti].style.display = "block";
-    }
-</script>
 </html>
