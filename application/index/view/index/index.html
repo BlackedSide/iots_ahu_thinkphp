@@ -70,13 +70,13 @@
         <div class="news news-lab">
             <div class="news-head"><span>最新论文</span><a href="">More</a></div>
             {volist name="latest_thesis" id="vo1"}
-                <p><em></em><a href="{:url('shownews',['id'=>$vo1['id']])}">{$vo1.title}</a><span>{$vo1.createtime|date='Y-m-d',###}</span></p>
+                <li><em></em><p><a href="{:url('shownews',['id'=>$vo1['id']])}">{$vo1.title}</a></p><span>{$vo1.createtime|date='Y-m-d',###}</span></li>
             {/volist}
         </div>
         <div class="news news-achive">
             <div class="news-head"><span>新闻快递</span><a href="">More</a></div>
             {volist name="latest_news" id="vo2"}
-                <p><em></em><a href="{:url('shownews',['id'=>$vo2['id']])}">{$vo2.title}</a><span>{$vo2.createtime|date='Y-m-d',###}</span></p>
+                <li><em></em><p><a href="{:url('shownews',['id'=>$vo2['id']])}">{$vo2.title}</a></p><span>{$vo2.createtime|date='Y-m-d',###}</span></li>
             {/volist}
         </div>
     </div>

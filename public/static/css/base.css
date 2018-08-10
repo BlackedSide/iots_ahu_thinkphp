@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+body{
+    background: url(../img/ahu1.jpg) no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+}
+.container{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255,255,255,0.7);
+    overflow: hidden;
+}
+/** 
+ *  导航头部分
+**/
+.nav-head{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    height: 130px;
+    background-color: rgba(0,0,0,70%);
+    color: #fff;
+}
+.nav-head img{
+    width: 80px;
+    height: 80px;
+    margin: 25px 0 25px 220px;
+    float: left;
+}
+.nav-head h1{
+    float: left;
+    margin: 20px 0 0 20px;
+    font-size: 42px;
+}
+.nav-head h2{
+    float: left;
+    margin-left: 20px;
+    font-size: 24px;
+}
+.nav-main{
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #333333;
+    overflow: hidden;
+    border-top: 2px solid rgba(255,255,255,0.7);
+}
+.nav-main li, .dropdown{
+    float: left;
+}
+.nav-main li a, .dropbtn{
+    display: block;
+    width: 150px;
+    padding: 16px 0;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+.nav-main li a:hover, .dropdown1:hover .dropbtn1, .dropdown2:hover .dropbtn2, .dropdown3:hover .dropbtn3{
+    padding: 13px 0;
+    background-color: #000;
+    color: #fff;
+    border-bottom: 6px solid #76d6ff;
+}
+.dropdown{
+    display: inline-block;
+}
+.drop-content{
+    background-color: #ebebeb;
+    display: none;
+    position: absolute;
+    z-index: 5;
+    min-width: 150px;
+}
+.drop-content a{
+    color: #333333;
+    display: block;
+    padding: 16px 16px;
+    font-size: 16px;
+    text-align: center;
+}
+.drop-content a:hover{
+    background-color: #000;
+    color: #fff;
+}
+.dropdown1:hover .drop-content1{
+    display: block;
+}
+.dropdown2:hover .drop-content2{
+    display: block;
+}
+.dropdown3:hover .drop-content3{
+    display: block;
+}
+/** 
+ *  底部摘要部分
+**/
+.footer{
+    width: 1200px;
+    height: 60px;
+    padding: 20px 0 20px 0;
+    margin: 0 auto;
+    color: #fff;
+    background-color: #333333;
+    text-align: center;
+    line-height: 30px;
+}
+.footer a{
+    color: #fff;
+}

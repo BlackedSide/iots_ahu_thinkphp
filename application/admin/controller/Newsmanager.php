@@ -69,9 +69,9 @@ class Newsmanager extends Controller
 
         $result = db('iot_content') -> where('id',$id) -> update($data);
         if($result){
-            $this -> success("更新成功！", url('update'));
+            $this -> success("更新成功！", url('insert'));
         }else{
-            $this -> error("更新失败……", url('update'));
+            $this -> error("更新失败……", url('insert'));
         }
     }
 }
