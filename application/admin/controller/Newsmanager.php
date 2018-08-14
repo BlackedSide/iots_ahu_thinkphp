@@ -6,6 +6,13 @@ url::root('/index.php');
 
 class Newsmanager extends Controller
 {
+    public function _initialize(){
+        $session = new \think\Session();
+        if(!$session -> get('uid')){
+            $this -> error('用户未登录！', url('login/index'));
+        }
+    }
+    
     public function news(){
         $list = db('iot_content') -> where('category',"新闻") -> order("createtime DESC") -> select();
         $this -> assign('content_table', $list);

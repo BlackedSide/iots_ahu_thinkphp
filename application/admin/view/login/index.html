@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页</title>
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/login.css">
+</head>
+<body>
+    <div class="login-content">
+        <h1>登 录 Login</h1>
+        <form action="{:url('login/login')}" method="post" onsubmit="return check(this)">
+            账号：<input type="text" name="login_name" id="login_name">
+            <br>
+            密码：<input type="password" name="login_pwd" id="login_pwd">
+            <br>
+            <button type="submit">登 录</button>
+        </form>
+    </div>
+</body>
+
+<script>
+    function check(form){
+        if(form.login_name.value == ""){
+            alert("请输入用户名！");
+            form.login_name.focus();
+            return false;
+        }
+        if(form.login_pwd.value == ""){
+            alert("请输入密码！");
+            form.login_pwd.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+</html>
