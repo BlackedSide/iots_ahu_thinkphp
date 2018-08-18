@@ -10,8 +10,10 @@ class Index extends Controller
     {
         $list1 = db('iot_content') -> where('category',"新闻") -> order('createtime DESC') -> limit(8) -> select();
         $list2 = db('iot_content') -> where('category',"论文") -> order('createtime DESC') -> limit(8) -> select();
+        $list3 = db('iot_banner') -> order('createtime DESC') -> limit(3) -> select();
         $this -> assign('latest_news',$list1);
         $this -> assign('latest_thesis',$list2);
+        $this -> assign('banner_show',$list3);
         return $this->fetch();
     }
 

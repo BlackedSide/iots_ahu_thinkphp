@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="__STATIC__/css/default.css">
+    <link rel="stylesheet" href="__STATIC__/css/new.css">
+    <script src="__STATIC__/js/jquery-3.1.1.min.js"></script>
+    <script src="__STATIC__/js/wangEditor.min.js"></script>
+</head>
+<body>
+    <div class="new_title">大图新增页</div>
+
+    <form action="{:url('banner/submit')}" method="get" onsubmit="return check(this)">
+        <label for="modin_name">图片路径</label><br>
+        <input type="text" id="modin_name" name="banner_path">
+        <br><br>
+        <label for="banner_title">展示标题</label><br>
+        <input type="text" name="banner_title" id="banner_title">
+        <br><br>
+        <label for="banner_news">链接新闻地址</label><br>
+        <input type="text" name="banner_news" id="banner_news">
+        <br><br>
+        <label for="newin_remark">备注</label><br>
+        <input type="text" name="banner_remark" id="newin_remark">
+        <br><br>
+        <button id="newin_submit" type="submit">保存</button>
+    </form>
+
+    <script>
+        function check(form){
+            if(form.modin_name.value == ""){
+                alert("请输入图片路径！");
+                form.modin_name.focus();
+                return false;
+            }
+            if(form.banner_title.value == ""){
+                alert("请输入标题内容！");
+                form.banner_title.focus();
+                return false;
+            }
+            if(form.banner_news.value == ""){
+                alert("请输入新闻链接地址！");
+                form.banner_news.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -51,18 +51,12 @@
     <div class="main clearfix">
         <div class="banner">
             <ul>
-                <li class="li_img fade">
-                    <img src="__STATIC__/img/example1.jpg" alt="">
-                    <span>IoT是Internet Of Things的缩写，翻译为物联网</span>
-                </li>
-                <li class="li_img fade">
-                    <img src="__STATIC__/img/example2.jpg" alt="">
-                    <span>WISE-PaaS物联网软件平台服务架构</span>
-                </li>
-                <li class="li_img fade">
-                    <img src="__STATIC__/img/example3.png" alt="">
-                    <span>物联网信息技术壁纸展示</span>
-                </li>
+                {volist name="banner_show" id="vo3"}
+                    <li class="li_img fade">
+                        <img src="{$vo3.path}" alt="">
+                        <span><a href="{$vo3.news}">{$vo3.title}</a></span>
+                    </li>
+                {/volist}
             </ul>
             <a class="prev">❮</a>
             <a class="next">❯</a>
