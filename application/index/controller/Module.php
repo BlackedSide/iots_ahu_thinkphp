@@ -16,7 +16,7 @@ class Module extends Controller
         return $this -> fetch();
     }
 
-    public function list($modname,$category){
+    public function showlist($modname,$category){
         $show = db('iot_content') -> where('category',$category) -> order('createtime DESC') -> select();
         $this -> assign('html_title',$modname);
         $this -> assign('list_title',$modname);

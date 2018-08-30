@@ -35,13 +35,13 @@
                 <a href="{:url('module/index',['modname'=>'可信嵌入式系统'])}">可信嵌入式系统</a>
             </div>
         </div>
-        <li><a href="{:url('module/list',['modname'=>'研究成果','category'=>'论文'])}">研究成果</a></li>
-        <li><a href="{:url('module/list',['modname'=>'合作交流','category'=>'合作'])}">合作交流</a></li>
+        <li><a href="{:url('module/showlist',['modname'=>'研究成果','category'=>'论文'])}">研究成果</a></li>
+        <li><a href="{:url('module/showlist',['modname'=>'合作交流','category'=>'合作'])}">合作交流</a></li>
         <div class="dropdown dropdown3">
             <a class="dropbtn dropbtn3" href="">新闻资讯</a>
             <div class="drop-content drop-content3">
-                <a href="{:url('module/list',['modname'=>'新闻动态','category'=>'新闻'])}">新闻动态</a>
-                <a href="{:url('module/list',['modname'=>'通知公告','category'=>'通知'])}">通知公告</a>
+                <a href="{:url('module/showlist',['modname'=>'新闻动态','category'=>'新闻'])}">新闻动态</a>
+                <a href="{:url('module/showlist',['modname'=>'通知公告','category'=>'通知'])}">通知公告</a>
             </div>
         </div>
         <li><a href="{:url('module/index',['modname'=>'联系我们'])}">联系我们</a></li>
@@ -62,13 +62,13 @@
             <a class="next">❯</a>
         </div>
         <div class="news news-lab">
-            <div class="news-head"><span>最新论文</span><a href="{:url('module/list',['modname'=>'研究成果','category'=>'论文'])}">More</a></div>
+            <div class="news-head"><span>最新论文</span><a href="{:url('module/showlist',['modname'=>'研究成果','category'=>'论文'])}">More</a></div>
             {volist name="latest_thesis" id="vo1"}
                 <li><em></em><p><a href="{:url('shownews',['id'=>$vo1['id']])}">{$vo1.title}</a></p><span>{$vo1.createtime|date='Y-m-d',###}</span></li>
             {/volist}
         </div>
         <div class="news news-achive">
-            <div class="news-head"><span>新闻快递</span><a href="{:url('module/list',['modname'=>'新闻动态','category'=>'新闻'])}">More</a></div>
+            <div class="news-head"><span>新闻快递</span><a href="{:url('module/showlist',['modname'=>'新闻动态','category'=>'新闻'])}">More</a></div>
             {volist name="latest_news" id="vo2"}
                 <li><em></em><p><a href="{:url('shownews',['id'=>$vo2['id']])}">{$vo2.title}</a></p><span>{$vo2.createtime|date='Y-m-d',###}</span></li>
             {/volist}
