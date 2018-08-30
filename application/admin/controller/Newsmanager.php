@@ -30,6 +30,11 @@ class Newsmanager extends Controller
         $this -> assign('content_table', $list);
         return $this->fetch();
     }
+    public function patent(){
+        $list = db('iot_content') -> where('category',"专利") -> order("createtime DESC") -> select();
+        $this -> assign('content_table', $list);
+        return $this->fetch();
+    }
 
     public function cooperation(){
         $list = db('iot_content') -> where('category',"合作") -> order("createtime DESC") -> select();
