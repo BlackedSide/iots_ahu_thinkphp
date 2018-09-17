@@ -34,10 +34,34 @@ class Upload extends Controller
 
             $uploadlist = db('iot_image') -> insert($data);
             if($uploadlist){
-                $this -> success('图片上传成功！', url('index'));
+                $this -> success('图片上传成功！', url('upload'));
             }else{
                 $this -> error('图片上传失败！', url('index'));
             }
+        }
+    }
+
+    public function deletelist($id){
+        $data['locked'] = 1;
+        $data['createtime'] = time();
+
+        $result = db('iot_image') -> where('id',$id) -> update($data);
+        if($result){
+            $this -> success('锁定成功！', url('index'));
+        }else{
+            $this -> error('锁定失败……', url('index'));
+        }
+    }
+
+    public function reuse($id){
+        $data['locked'] = 0;
+        $data['createtime'] = time();
+
+        $result = db('iot_image') -> where('id',$id) -> update($data);
+        if($result){
+            $this -> success('恢复成功！', url('index'));
+        }else{
+            $this -> error('恢复失败……', url('index'));
         }
     }
 }

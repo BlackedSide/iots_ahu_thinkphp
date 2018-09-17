@@ -86,4 +86,28 @@ class Newsmanager extends Controller
             $this -> error("更新失败……", url('insert'));
         }
     }
+
+    public function deletelist($id){
+        $data['locked'] = 1;
+        $data['createtime'] = time();
+
+        $result = db('iot_content') -> where('id',$id) -> update($data);
+        if($result){
+            $this -> success('锁定成功！', url('news'));
+        }else{
+            $this -> error('锁定失败……', url('news'));
+        }
+    }
+
+    public function reuse($id){
+        $data['locked'] = 0;
+        $data['createtime'] = time();
+
+        $result = db('iot_content') -> where('id',$id) -> update($data);
+        if($result){
+            $this -> success('恢复成功！', url('news'));
+        }else{
+            $this -> error('恢复失败……', url('news'));
+        }
+    }
 }

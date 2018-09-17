@@ -29,8 +29,8 @@
 				</td>
 				<td>
 					<a href="/uploads/{$vo.path}" target="view_window">查看</a>&nbsp;
-					{if condition="$vo.locked == 1"}<a href="{:url('delete',['id'=>$vo['id']])}">恢复</a>
-						{else /}<a href="{:url('reuse',['id'=>$vo['id']])}">删除</a>
+					{if condition="$vo.locked == 1"}<a href="{:url('reuse',['id'=>$vo['id']])}">恢复</a>
+						{else /}<a href="{:url('deletelist',['id'=>$vo['id']])}">删除</a>
 					{/if}
 				</td>
 			</tr>
