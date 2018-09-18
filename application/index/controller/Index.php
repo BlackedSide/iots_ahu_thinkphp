@@ -8,8 +8,8 @@ class Index extends Controller
 {
     public function index()
     {
-        $list1 = db('iot_content') -> where('category',"新闻") -> whereOr('category',"通知") -> order('createtime DESC') -> limit(8) -> select();
-        $list2 = db('iot_content') -> where('category',"论文") -> whereOr('category',"专利") -> order('createtime DESC') -> limit(8) -> select();
+        $list1 = db('iot_content') -> where('category',"新闻") -> where('locked',0) -> whereOr('category',"通知") -> order('createtime DESC') -> limit(8) -> select();
+        $list2 = db('iot_content') -> where('category',"论文") -> where('locked',0) -> whereOr('category',"专利") -> order('createtime DESC') -> limit(8) -> select();
         $list3 = db('iot_banner') -> order('createtime DESC') -> limit(3) -> select();
         $this -> assign('latest_news',$list1);
         $this -> assign('latest_thesis',$list2);
@@ -19,7 +19,7 @@ class Index extends Controller
 
     public function shownews($id){
         $show = db('iot_content') -> where('id',$id) -> select();
-        $notify = db('iot_content') -> where('category',"通知") -> order('createtime DESC') -> limit(5) -> select();
+        $notify = db('iot_content') -> where('category',"通知") -> where('locked',0) -> order('createtime DESC') -> limit(5) -> select();
         $this -> assign('latest_notify',$notify);
         // print_r($show);
         $this -> assign('html_title',$show[0]['title']);
