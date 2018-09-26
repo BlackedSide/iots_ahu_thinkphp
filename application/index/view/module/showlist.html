@@ -60,7 +60,7 @@
         <div class="listfor">
             <div class="list_title">{$list_title}</div>
             {volist name="list" id="vo"}
-                <li><p><a href="{:url('index/shownews',['id'=>$vo['id']])}">{$vo.title}</a></p><span>{$vo.createtime|date="Y-m-d H:m",###}</span></li>
+                <li><p><a href="{:url('index/shownews',['id'=>$vo['id']])}">{$vo.title}</a></p><span>{$vo.createtime|date="Y-m-d H:i",###}</span></li>
             {/volist}
         </div>
     </div>
